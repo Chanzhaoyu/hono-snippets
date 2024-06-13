@@ -2,8 +2,6 @@
 
 This extension is a set of Snippets for Hono. They are created so that scaffolding with Hono can be easy. You can try to remember most of these.
 
-![Demo](https://github.com/Chanzhaoyu/hono-snippets/raw/master/images/demo.gif)
-
 ## Snippets Documentation
 
 | Prefix | Description   |
