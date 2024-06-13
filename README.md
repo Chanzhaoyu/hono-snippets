@@ -2,6 +2,8 @@
 
 This extension is a set of Snippets for Hono. They are created so that scaffolding with Hono can be easy. You can try to remember most of these.
 
+![Cover](images/cover.png)
+
 ## Snippets Documentation
 
 | Prefix | Description   |
