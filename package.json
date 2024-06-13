@@ -1,0 +1,37 @@
+{
+  "name": "hono-snippets",
+  "displayName": "Hono Snippets",
+  "description": "Hono snippets for vscode",
+  "version": "1.0.0",
+  "license": "MIT",
+  "publisher": "Chanzhaoyu",
+  "author": {
+    "name": "Chanzhaoyu",
+    "url": "https://github.com/Chanzhaoyu"
+  },
+  "bugs": {
+    "url": "https://github.com/Chanzhaoyu/hono-snippets/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Chanzhaoyu/hono-snippets"
+  },
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "icon": "icon.png",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippets/hono.json"
+      }
+    ]
+  },
+  "scripts": {
+    "publish": "vsce publish"
+  }
+}

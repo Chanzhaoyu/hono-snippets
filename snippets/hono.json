@@ -1,0 +1,138 @@
+{
+  "Hono base": {
+    "prefix": "h:base",
+    "body": [
+      "import { serve } from '@hono/node-server'",
+      "import { Hono } from 'hono'",
+      "const app = new Hono()",
+      "",
+      "app.get('/', (c) => c.text('Hello Hono!'))",
+      "",
+      "const port = 3000",
+      "serve({",
+      "  fetch: app.fetch,",
+      "  port,",
+      "})"
+    ]
+  },
+  "Hono Not Found": {
+    "prefix": "h:not-found",
+    "body": [
+      "app.notFound((c) => {",
+      "  return c.text('Custom 404 Message', 404)",
+      "})"
+    ]
+  },
+  "Hono Error Handling": {
+    "prefix": "h:error-handling",
+    "body": [
+      "app.onError((err, c) => {",
+      "  console.error(`\\${err}`)",
+      "  return c.text('Custom Error Message', 500)",
+      "})"
+    ]
+  },
+  "Hono api get": {
+    "prefix": "h:api-get",
+    "body": ["app.get('/', (c) => {", "  return c.text('GET /')", "})"]
+  },
+  "Hono api post": {
+    "prefix": "h:api-post",
+    "body": ["app.post('/', (c) => {", "  return c.text('POST /')", "})"]
+  },
+  "Hono api put": {
+    "prefix": "h:api-put",
+    "body": ["app.put('/', (c) => {", "  return c.text('PUT /')", "})"]
+  },
+  "Hono api delete": {
+    "prefix": "h:api-delete",
+    "body": ["app.delete('/', (c) => {", "  return c.text('DELETE /')", "})"]
+  },
+  "Hono api upload": {
+    "prefix": "h:api-upload",
+    "body": [
+      "app.post('/upload', async (c) => {",
+      "  const body = await c.req.parseBody()",
+      "  console.log(body['file'])",
+      "})"
+    ]
+  },
+  "Hono Path Parameter": {
+    "prefix": "h:param",
+    "body": ["const param = c.req.param()"]
+  },
+  "Hono Path Query": {
+    "prefix": "h:query",
+    "body": ["const ${0:key} = c.req.query('${1:key}')"]
+  },
+  "Hono Request Body": {
+    "prefix": "h:body",
+    "body": ["const body = await c.req.parseBody()"]
+  },
+  "Hono Request JSON": {
+    "prefix": "h:json",
+    "body": ["const json = await c.req.json()"]
+  },
+  "Hono Middleware": {
+    "prefix": "h:middleware",
+    "body": [
+      "import type { Context, Next } from 'hono'",
+      "",
+      "export const middleware = async (c: Context, next: Next) => {",
+      "  await next()",
+      "}"
+    ]
+  },
+  "Hono Serve Static": {
+    "prefix": "h:serve-static",
+    "body": [
+      "import { serveStatic } from '@hono/node-server/serve-static'",
+      "",
+      "app.use('/*', serveStatic({ root: './public' }))"
+    ]
+  },
+  "Hono CORS": {
+    "prefix": "h:cors",
+    "body": [
+      "import { cors } from 'hono/cors'",
+      "",
+      "app.use(",
+      "  '*',",
+      "  cors({",
+      "    origin: '*',",
+      "    allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],",
+      "  })",
+      ")"
+    ]
+  },
+  "Hono Logger": {
+    "prefix": "h:logger",
+    "body": ["import { logger } from 'hono/logger'", "", "app.use(logger())"]
+  },
+  "Hono Compress": {
+    "prefix": "h:compress",
+    "body": [
+      "import { compress } from 'hono/compress'",
+      "",
+      "app.use(compress())"
+    ]
+  },
+  "Hono Context Get": {
+    "prefix": "h:get",
+    "body": ["const value = c.get('key')"]
+  },
+  "Hono Context Set": {
+    "prefix": "h:set",
+    "body": ["c.set('key', 'value')"]
+  },
+  "Hono Context Variable": {
+    "prefix": "h:context-interface",
+    "body": [
+      "declare module 'hono' {",
+      "  interface ContextVariableMap {",
+      "    ${0}",
+      "  }",
+      "}"
+    ]
+  }
+}
