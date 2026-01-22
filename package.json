@@ -1,7 +1,7 @@
 {
   "name": "hono-snippets",
   "displayName": "Hono Snippets",
-  "description": "Hono snippets for vscode",
+  "description": "Hono snippets for vscode, Not an official plugin",
   "version": "1.1.0",
   "license": "MIT",
   "publisher": "Chanzhaoyu",
